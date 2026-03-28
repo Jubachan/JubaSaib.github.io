@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Juba SAIB | Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="#">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Curseur custom -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Bouton retour en haut -->
+  <button class="back-to-top" id="backToTop" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <header>
+    <nav id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-bracket">&lt;</span>Juba<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#accueil" class="nav-link" data-section="accueil">Accueil</a></li>
+          <li><a href="#a-propos" class="nav-link" data-section="a-propos">À propos</a></li>
+          <li><a href="#competences" class="nav-link" data-section="competences">Compétences</a></li>
+          <li><a href="#diplomes" class="nav-link" data-section="diplomes">Diplômes</a></li>
+          <li><a href="#experiences" class="nav-link" data-section="experiences">Expériences</a></li>
+          <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+          <li><a href="#cv" class="nav-link" data-section="cv">CV</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="accueil" class="hero">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag reveal-up" style="animation-delay:0.1s">
+            <span class="tag-dot"></span> Disponible pour opportunités
+          </div>
+          <h1 class="reveal-up" style="animation-delay:0.2s">
+            <span class="hero-name">Juba SAIB</span>
+          </h1>
+          <p class="hero-role reveal-up" style="animation-delay:0.35s">
+            <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+          </p>
+          <p class="hero-desc reveal-up" style="animation-delay:0.5s">
+            Étudiant en Licence 2 Informatique · Développeur passionné · Créateur de jeux vidéo
+          </p>
+          <div class="hero-buttons reveal-up" style="animation-delay:0.65s">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fas fa-eye"></i> Voir mes projets
+            </a>
+            <a href="CV_Juba_Saib.pdf" download="Juba_SAIB_CV.pdf" class="btn btn-outline">
+              <i class="fas fa-download"></i> Télécharger CV
+            </a>
+          </div>
+          <div class="hero-socials reveal-up" style="animation-delay:0.8s">
+            <a href="https://github.com/Jubachan" target="_blank" class="social-pill"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/juba-saib-2b7ab6378" target="_blank" class="social-pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:juba.saib@etu.unilim.fr" class="social-pill"><i class="fas fa-envelope"></i> Email</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Défiler</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section class="screen" id="a-propos">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 01</span>
+          <h2 class="sectionTitle"><span>À propos</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-photo-col reveal-left">
+            <div class="pic_container">
+              <div class="picContent">
+                <span class="pic_back pic_element"></span>
+                <div id="profil_pic" class="pic_element"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="about_p_container" class="about-content-col reveal-right">
+            <nav class="btn_nav">
+              <ul>
+                <li data-nw-id-target="about_presentation_p" data-nw-classgroup="about_p" class="js_show_btn selected_btn">
+                  <i class="fas fa-user"></i> Présentation
+                </li>
+                <li data-nw-id-target="about_languages_p" data-nw-classgroup="about_p" class="js_show_btn">
+                  <i class="fas fa-globe"></i> Langues
+                </li>
+                <li data-nw-id-target="about_softskills_p" data-nw-classgroup="about_p" class="js_show_btn">
+                  <i class="fas fa-brain"></i> Soft skills
+                </li>
+                <li data-nw-id-target="about_hobbies_p" data-nw-classgroup="about_p" class="js_show_btn">
+                  <i class="fas fa-heart"></i> Passions
+                </li>
+              </ul>
+            </nav>
+
+            <div class="box_style about_p" id="about_presentation_p">
+              <p class="p-spacer-under">Actuellement en deuxième année de Licence Informatique à l'Université de Limoges, je suis un étudiant curieux et déterminé. Mon parcours m'a permis d'acquérir une solide base en algorithmique, bases de données, réseaux et mathématiques.</p>
+              <p>Si vous souhaitez en apprendre plus sur moi, ou me contacter, n'hésitez plus — explorez ce site ou téléchargez mon CV ! </p>
+            </div>
+
+            <div class="box_style about_p hidden" id="about_languages_p">
+              <div class="lang-grid">
+                <div class="lang-item">
+                  <img class="flagImage" src="https://flagcdn.com/fr.svg" alt="Français">
+                  <h3>Français</h3>
+                  <p>Langue maternelle</p>
+                  <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-item">
+                  <img class="flagImage" src="https://flagcdn.com/gb.svg" alt="Anglais">
+                  <h3>Anglais</h3>
+                  <p>Niveau B2</p>
+                  <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
+                </div>
+                <div class="lang-item">
+                  <img class="flagImage" src="https://flagcdn.com/dz.svg" alt="Arabe/Kabyle">
+                  <h3>Arabe / Kabyle</h3>
+                  <p>Langues maternelles</p>
+                  <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box_style about_p hidden" id="about_softskills_p">
+              <div class="softskills-list">
+                <div class="skill-pill-item">
+                  <span class="pill-icon">⚡</span>
+                  <div>
+                    <strong>Apprentissage rapide</strong>
+                    <p>Toujours en quête de nouvelles technologies.</p>
+                  </div>
+                </div>
+                <div class="skill-pill-item">
+                  <span class="pill-icon">🤝</span>
+                  <div>
+                    <strong>Communication & résistance au stress</strong>
+                    <p>Collaboration efficace, dynamique positive.</p>
+                  </div>
+                </div>
+                <div class="skill-pill-item">
+                  <span class="pill-icon">🔄</span>
+                  <div>
+                    <strong>Adaptabilité</strong>
+                    <p>Nouveaux environnements, nouveaux défis.</p>
+                  </div>
+                </div>
+                <div class="skill-pill-item">
+                  <span class="pill-icon">🎯</span>
+                  <div>
+                    <strong>Rigueur & organisation</strong>
+                    <p>Gestion du temps, respect des délais.</p>
+                  </div>
+                </div>
+                <div class="skill-pill-item">
+                  <span class="pill-icon">🔍</span>
+                  <div>
+                    <strong>Analyse & résolution</strong>
+                    <p>Solutions simples à problèmes complexes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box_style about_p hidden" id="about_hobbies_p">
+              <div class="hobbies-grid">
+                <div class="hobby-card">
+                  <span class="hobby-emoji">🎮</span>
+                  <h3>Jeux vidéo</h3>
+                  <p>Je développe un jeu sur Unity, alliant technique et créativité.</p>
+                </div>
+                <div class="hobby-card">
+                  <span class="hobby-emoji">✈️</span>
+                  <h3>Voyages & Culture</h3>
+                  <p>Passionné par les nouvelles cultures, traditions et gastronomie.</p>
+                </div>
+                <div class="hobby-card">
+                  <span class="hobby-emoji">🎂</span>
+                  <h3>Pâtisserie</h3>
+                  <p>Bûches, verrines, choux, macarons — j'adore pâtisser !</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPÉTENCES ===== -->
+    <section id="competences">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 02</span>
+          <h2 class="sectionTitle"><span>Compétences</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" style="animation-delay:0.05s">
+            <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+            <div class="skill-cat">Programmation</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Unity (C#)</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="animation-delay:0.1s">
+            <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-cat">Bases de données</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL / MySQL</span>
+              <span class="skill-tag">Merise</span>
+              <span class="skill-tag">PL/SQL</span>
+              <span class="skill-tag">Oracle</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="animation-delay:0.15s">
+            <div class="skill-card-icon"><i class="fas fa-globe"></i></div>
+            <div class="skill-cat">Web</div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Node.js</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="animation-delay:0.2s">
+            <div class="skill-card-icon"><i class="fas fa-network-wired"></i></div>
+            <div class="skill-cat">Réseaux & Systèmes</div>
+            <div class="skill-tags">
+              <span class="skill-tag">OSI / TCP-IP</span>
+              <span class="skill-tag">Unix / Linux</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="animation-delay:0.25s">
+            <div class="skill-card-icon"><i class="fas fa-square-root-alt"></i></div>
+            <div class="skill-cat">Mathématiques</div>
+            <div class="skill-tags">
+              <span class="skill-tag">MATLAB</span>
+              <span class="skill-tag">Prolog</span>
+              <span class="skill-tag">Maple</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="animation-delay:0.3s">
+            <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+            <div class="skill-cat">Autres</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Pack Office</span>
+              <span class="skill-tag">Photoshop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIPLÔMES ===== -->
+    <section id="diplomes">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 03</span>
+          <h2 class="sectionTitle"><span>Diplômes & Formation</span></h2>
+          <p class="section-sub">Mon parcours académique</p>
+        </div>
+        <ul class="timeline">
+          <li class="reveal-left">
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="unilim.jpg" alt="Université de Limoges">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <span class="timeline-date">2025 – aujourd'hui</span>
+                <h4 class="subheading">Licence 2 Informatique</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Université de Limoges – Faculté des Sciences et Techniques</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted reveal-right">
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="ummto.png" alt="Université de Tizi Ouzou">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <span class="timeline-date">2023 – 2025</span>
+                <h4 class="subheading">Licence 1 & 2 Informatique</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Université de Tizi Ouzou (Algérie)</p>
+              </div>
+            </div>
+          </li>
+          <li class="reveal-left">
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="bac.jpg" alt="Baccalauréat">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <span class="timeline-date">2023</span>
+                <h4 class="subheading">Baccalauréat – Mention Bien</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Filière Mathématiques</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted reveal-right">
+            <div class="timeline-image timeline-start">
+              <h4>Début<br>de mon<br>parcours</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== EXPÉRIENCES PROFESSIONNELLES ===== -->
+    <section id="experiences">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 04</span>
+          <h2 class="sectionTitle"><span>Expériences professionnelles</span></h2>
+          <p class="section-sub">Stages et emplois</p>
+        </div>
+
+        <div class="experiences-grid">
+          <div class="experience-card reveal-up" style="animation-delay:0.05s">
+            <div class="experience-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="experience-info">
+              <div class="experience-top">
+                <span class="experience-badge">Stage</span>
+                <span class="experience-date"><i class="fas fa-calendar-alt"></i> 06/2026 – 07/2026</span>
+              </div>
+              <h3>Stage en Informatique</h3>
+              <p class="experience-company"><i class="fas fa-building"></i> Europ Assistance – Paris, France</p>
+              <p class="experience-desc">
+                Support "end user" : diagnostic et résolution des problèmes techniques sur les postes de travail des employés (matériel, logiciels, réseau). Participation à la maintenance du parc informatique.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-card reveal-up" style="animation-delay:0.1s">
+            <div class="experience-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="experience-info">
+              <div class="experience-top">
+                <span class="experience-badge">Emploi</span>
+                <span class="experience-date"><i class="fas fa-calendar-alt"></i> 04/2025 – 08/2025</span>
+              </div>
+              <h3>Responsable magasin de chaussures</h3>
+              <p class="experience-company"><i class="fas fa-map-marker-alt"></i> La Salamandre – L'Arbaa Nait Irathen, Algérie</p>
+              <p class="experience-desc">
+                Gestion complète du point de vente : accueil et conseil clientèle, gestion des stocks, encaissement, réapprovisionnement, tenue de la caisse et reporting hebdomadaire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 05</span>
+          <h2 class="sectionTitle"><span>Portfolio</span></h2>
+        </div>
+
+        <div class="portfolio-filters reveal-up">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="game">Jeux vidéo</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="data">Base de données</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <div class="project-card reveal-up" data-category="game" style="animation-delay:0.05s">
+            <div class="project-image">
+              <img src="img/Inimici Deus.jpeg" alt="Inimici Deus">
+              <div class="project-overlay">
+                <div class="overlay-tags">
+                  <span>Unity</span><span>C#</span><span>FSM</span><span>Level Design</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <span class="project-badge game">Jeu vidéo</span>
+                <span class="project-date"><i class="fas fa-clock"></i> En cours</span>
+              </div>
+              <h3>Inimici Deus</h3>
+              <p>Action-RPG 3D dungeon crawler atmosphérique. Explorez des ruines corrompues, maîtrisez des combats exigeants et affrontez les dieux oubliés avant qu'ils ne consument le monde.</p>
+              <p><strong>Projet solo :</strong> Univers original, IA Ennemie (FSM), Level Design 3D, Combat 3e personne.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal-up" data-category="game" style="animation-delay:0.1s">
+            <div class="project-image">
+              <img src="img/pacman.png" alt="Pac-Man">
+              <div class="project-overlay">
+                <div class="overlay-tags">
+                  <span>Java</span><span>Processing</span><span>Pathfinding</span><span>Game State</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <span class="project-badge game">Jeu vidéo</span>
+                <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+              </div>
+              <h3>Pac-Man</h3>
+              <p>Recréation fidèle du jeu d'arcade légendaire en Java avec la librairie Processing. Déplacements, collisions précises, scoring temps réel et IA des fantômes.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal-up" data-category="web" style="animation-delay:0.15s">
+            <div class="project-image">
+              <img src="img/nocturne.png" alt="Site NOCTURNE">
+              <div class="project-overlay">
+                <div class="overlay-tags">
+                  <span>HTML/CSS</span><span>JavaScript</span><span>Responsive</span><span>UI/UX</span>
+                </div>
+                <a href="https://nocturn.site" target="_blank" class="overlay-link">
+                  <i class="fas fa-external-link-alt"></i> Visiter le site
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <span class="project-badge web">Web</span>
+                <span class="project-date"><i class="fas fa-map-marker-alt"></i> Tizi Ouzou</span>
+              </div>
+              <h3>Site Web NOCTURNE</h3>
+              <p>Plateforme vitrine moderne et entièrement responsive pour un restaurant. Menu interactif, galerie photos et système de réservation en ligne.</p>
+              <a href="https://nocturn.site" target="_blank" class="project-external-link">
+                <i class="fas fa-external-link-alt"></i> nocturn.site
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card reveal-up" data-category="data" style="animation-delay:0.2s">
+            <div class="project-image project-image-icon">
+              <div class="icon-display"><i class="fas fa-database"></i></div>
+              <div class="project-overlay">
+                <div class="overlay-tags">
+                  <span>SQL</span><span>Schéma Relationnel</span><span>Triggers</span><span>Optimisation</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <span class="project-badge data">Base de données</span>
+                <span class="project-date"><i class="fas fa-university"></i> Limoges</span>
+              </div>
+              <h3>BDD Restaurant</h3>
+              <p>Conception et implémentation complète d'une base de données relationnelle pour la gestion d'un restaurant. Schéma optimisé, triggers et procédures stockées.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CV ===== -->
+    <section id="cv">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 06</span>
+          <h2 class="sectionTitle"><span>Curriculum Vitae</span></h2>
+        </div>
+        <div class="cv-inner reveal-up">
+          <div class="cv-preview">
+            <iframe src="CV_Juba_Saib.pdf" frameborder="0" title="Aperçu CV"></iframe>
+          </div>
+          <div class="cv-right">
+            <div class="cv-badge"><i class="fas fa-file-pdf"></i> PDF disponible</div>
+            <h3>Mon <span>CV</span></h3>
+            <p>Mon CV récapitule mon parcours, mes compétences techniques et mes expériences en une page claire et concise.</p>
+            <div class="cv-highlights">
+              <div class="cv-hl"><i class="fas fa-check-circle"></i> Licence 2 Informatique</div>
+              <div class="cv-hl"><i class="fas fa-check-circle"></i> Projets Unity & Web</div>
+            </div>
+            <div class="cv-actions">
+              <a href="CV_Juba_Saib.pdf" download="Juba_SAIB_CV.pdf" class="btn btn-primary">
+                <i class="fas fa-download"></i> Télécharger le CV
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fas fa-paper-plane"></i> Me contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">// 07</span>
+          <h2 class="sectionTitle"><span>Me contacter</span></h2>
+          <p class="contact-intro">Un projet ? Une opportunité ? N'hésitez pas !</p>
+        </div>
+        <div class="contact-wrapper reveal-up">
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom..." required>
+                <span class="field-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                <span class="field-error" id="emailError"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject"><i class="fas fa-tag"></i> Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Objet de votre message...">
+            </div>
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment"></i> Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+              <span class="char-count" id="charCount">0 / 500</span>
+              <span class="field-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer</span>
+              <span class="btn-loading hidden"><i class="fas fa-spinner fa-spin"></i> Envoi...</span>
+            </button>
+            <div class="form-success hidden" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message envoyé ! Je vous répondrai très vite.
+            </div>
+          </form>
+
+          <div class="contact-info">
+            <h3>Retrouvez-moi</h3>
+            <div class="contact-links">
+              <a href="mailto:juba.saib@etu.unilim.fr" class="contact-link">
+                <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <span class="contact-link-label">Email</span>
+                  <span class="contact-link-val">juba.saib@etu.unilim.fr</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/juba-saib-2b7ab6378" target="_blank" class="contact-link">
+                <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
+                <div>
+                  <span class="contact-link-label">LinkedIn</span>
+                  <span class="contact-link-val">juba-saib</span>
+                </div>
+              </a>
+              <a href="https://github.com/Jubachan" target="_blank" class="contact-link">
+                <div class="contact-link-icon"><i class="fab fa-github"></i></div>
+                <div>
+                  <span class="contact-link-label">GitHub</span>
+                  <span class="contact-link-val">Jubachan</span>
+                </div>
+              </a>
+            </div>
+            <div class="contact-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Limoges, France</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rgpd-note reveal-up">
+          <i class="fas fa-shield-alt"></i>
+          <p>Conformément au RGPD, les données collectées servent uniquement à entrer en contact. Suppression sur demande.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>Juba<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+      </div>
+      <p>© 2026 Juba SAIB — Tous droits réservés.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Jubachan" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/juba-saib-2b7ab6378" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:juba.saib@etu.unilim.fr"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
