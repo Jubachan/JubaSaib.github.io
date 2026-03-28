@@ -1816,3 +1816,120 @@ footer p {
 /* ===== UTILITAIRES ===== */
 .text-accent { color: var(--accent); }
 .text-muted { color: var(--text-muted); }
+/* ===== RESPONSIVE NAVIGATION (MOBILE) ===== */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    justify-content: space-between;
+  }
+
+  /* Logo centré */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+  }
+
+  /* Bouton hamburger visible */
+  .menu-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  /* Menu déroulant */
+  .nav-links {
+    position: fixed;
+    top: 70px; /* Hauteur de la navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 242, 220, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 201, 163, 0.2);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--dark);
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: var(--dark);
+    color: var(--accent);
+  }
+}
+
+/* ===== CORRECTIONS POUR LA SECTION "À PROPOS" SUR MOBILE ===== */
+@media (max-width: 768px) {
+  /* Ajuster l'espacement entre la photo et le contenu */
+  .about-grid {
+    gap: 1.5rem;
+  }
+
+  /* La colonne photo : on revient à une disposition verticale pour éviter tout chevauchement */
+  .about-photo-col {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  /* Désactiver l'effet sticky sur les onglets pour éviter qu'ils ne flottent au-dessus de l'image */
+  #a-propos .btn_nav {
+    position: relative;
+    top: 0;
+    margin-bottom: 1.5rem;
+    background: var(--dark);
+  }
+
+  /* Ajuster la taille de l'image si nécessaire */
+  .pic_container, .picContent, .pic_element {
+    width: 160px;
+    height: 240px;
+  }
+
+  /* Réduire le padding du conteneur des onglets */
+  .btn_nav ul {
+    gap: 6px;
+  }
+
+  .btn_nav ul li {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Pour les très petits écrans (≤550px), réduire encore un peu */
+@media (max-width: 550px) {
+  .pic_container, .picContent, .pic_element {
+    width: 130px;
+    height: 195px;
+  }
+
+  .btn_nav ul li {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
