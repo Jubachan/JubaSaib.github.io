@@ -1,9 +1,4 @@
-/* ===================================================
-   JUBA SAIB PORTFOLIO — JS AMÉLIORÉ
-   Features: Curseur, Typer, Particules, Filtres,
-             Reveal au scroll, Form validation,
-             Navbar active, Progress bar, Back to top
-=================================================== */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
