@@ -1,4 +1,9 @@
-
+/* ===================================================
+   JUBA SAIB PORTFOLIO — JS AMÉLIORÉ
+   Features: Curseur, Typer, Particules, Filtres,
+             Reveal au scroll, Form validation,
+             Navbar active, Progress bar, Back to top
+=================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -353,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const nameOk = validateField(
@@ -374,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!nameOk || !emailOk || !msgOk) return;
 
-      // Simuler envoi
+      // ===== ENVOI RÉEL VIA EMAILJS =====
       const submitBtn   = document.getElementById('submitBtn');
       const btnText     = submitBtn.querySelector('.btn-text');
       const btnLoading  = submitBtn.querySelector('.btn-loading');
@@ -384,16 +389,32 @@ document.addEventListener('DOMContentLoaded', () => {
       btnLoading.classList.remove('hidden');
       submitBtn.disabled = true;
 
-      await new Promise(r => setTimeout(r, 1500));
+      emailjs.init('3iBYLDB4BPA2N3Axz');
 
-      btnText.classList.remove('hidden');
-      btnLoading.classList.add('hidden');
-      submitBtn.disabled = false;
-      formSuccess.classList.remove('hidden');
-      contactForm.reset();
-      charCount.textContent = '0 / 500';
+      const templateParams = {
+        name    : document.getElementById('name').value,
+        email   : document.getElementById('email').value,
+        subject : document.getElementById('subject').value || '(Sans sujet)',
+        message : document.getElementById('message').value,
+      };
 
-      setTimeout(() => formSuccess.classList.add('hidden'), 5000);
+      emailjs.send('service_6rxc1io', 'template_qlsyuok', templateParams)
+        .then(() => {
+          btnText.classList.remove('hidden');
+          btnLoading.classList.add('hidden');
+          submitBtn.disabled = false;
+          formSuccess.classList.remove('hidden');
+          contactForm.reset();
+          charCount.textContent = '0 / 500';
+          setTimeout(() => formSuccess.classList.add('hidden'), 5000);
+        })
+        .catch((error) => {
+          console.error('Erreur EmailJS :', error);
+          btnText.classList.remove('hidden');
+          btnLoading.classList.add('hidden');
+          submitBtn.disabled = false;
+          alert("Une erreur s'est produite lors de l'envoi. Réessaie ou contacte-moi directement par email.");
+        });
     });
 
     // Valider en temps réel
